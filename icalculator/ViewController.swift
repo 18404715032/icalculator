@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var 显示缓存 = ""
+    var Display = ""
     var cache = 0.0
     @IBOutlet weak var x: UITextField!
     @IBOutlet weak var y: UITextField!
@@ -25,54 +25,55 @@ class ViewController: UIViewController {
     @IBAction func except(sender: AnyObject) {
     }
     @IBAction func clear(sender: AnyObject) {
-        显示缓存 = ""
+        Display = ""
         self.x.text = ""
     }
-    @IBAction func 一(sender: AnyObject) {
-        按("1")
+    @IBAction func h1(sender: AnyObject) {
+        click("1")
     }
-    @IBAction func 二(sender: AnyObject) {
-        按("2")
+    @IBAction func h2(sender: AnyObject) {
+        click("2")
     }
-    @IBAction func 三(sender: AnyObject) {
-        按("3")
+    @IBAction func h3(sender: AnyObject) {
+        click("3")
     }
-    @IBAction func 四(sender: AnyObject) {
-        按("4")
+    @IBAction func h4(sender: AnyObject) {
+        click("4")
     }
-    @IBAction func 五(sender: AnyObject) {
-        按("5")
+    @IBAction func h5(sender: AnyObject) {
+        click("5")
     }
-    @IBAction func 六(sender: AnyObject) {
-        按("6")
+    @IBAction func h6(sender: AnyObject) {
+       click("6")
     }
-    @IBAction func 七(sender: AnyObject) {
-        按("7")
+    @IBAction func h7(sender: AnyObject) {
+        click("7")
     }
-    @IBAction func 八(sender: AnyObject) {
-        按("8")
+    @IBAction func h8(sender: AnyObject) {
+        click("8")
     }
-    @IBAction func 九(sender: AnyObject) {
-        按("9")
+    @IBAction func h9(sender: AnyObject) {
+        click("9")
     }
-    @IBAction func 零(sender: AnyObject) {
-        按("0")
+    @IBAction func h0(sender: AnyObject) {
+        click("0")
     }
-    @IBAction func 点(sender: AnyObject) {
-        按(".")
+    @IBAction func dit(sender: AnyObject) {
+        click(".")
     }
-    @IBAction func 等于(sender: AnyObject) {
+
+    @IBAction func equal(sender: AnyObject) {
     }
-    func 按(number:String){
-        显示缓存 += number
-        self.x.text = 显示缓存
+    func click (number:String){
+        Display += number
+        self.x.text = Display
     }
     
-    func 求值(){
-        if !显示缓存.isEmpty{
-            let P = 显示缓存 as NSString
+    func evaluation(){
+        if !Display.isEmpty{
+            let P = Display as NSString
             cache = P.doubleValue
-            显示缓存 = ""
+            Display = ""
         }
     }
     override func viewDidLoad() {
