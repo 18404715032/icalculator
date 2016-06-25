@@ -50,7 +50,6 @@
                                 <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJb-NP-0qw"/>
-                                    <action selector="一:" destination="BYZ-38-t0r" eventType="touchUpInside" id="smo-mN-w3x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-7N-NsC">
@@ -130,7 +129,7 @@
                                     <action selector="dit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Kc-Tv-yBv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="非常6计算器" textAlignment="right" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-hy-IsU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="非常6的计算器" textAlignment="right" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-hy-IsU">
                                 <rect key="frame" x="34" y="31" width="246" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
