@@ -11,15 +11,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var Display = ""
- //   var cache = 0.0
+    //var Display = ""
     var one:Double=0.0
     var two:Double=0.0
-    var b_fuzhi:Bool=false
-    var b_state:Bool=false
-    var b_dian:Bool=false
+    var fuzhi:Bool=false
+    var initial:Bool=false
+    var dian:Bool=false
     var result:Double=0.0
-    
     
     @IBOutlet weak var x: UITextField!
     @IBOutlet weak var y: UITextField!
@@ -40,15 +38,16 @@ class ViewController: UIViewController {
         result=0.0
         one=0.0
         two=0.0
-        Display=""
-        b_fuzhi=false
-        b_state=false
-        b_dian=false
+       // Display=""
+        fuzhi=false
+        initial=false
+        dian=false
         x.text="0.0"
     }
     @IBAction func h1(sender: AnyObject) {
         click("1")
     }
+    
     @IBAction func h2(sender: AnyObject) {
         click("2")
     }
@@ -77,11 +76,11 @@ class ViewController: UIViewController {
         click("0")
     }
     @IBAction func dit(sender: AnyObject) {
-        click(".")
+            click(".")
     }
 
     @IBAction func equal(sender: AnyObject) {
-        if(b_state==true){
+        if(initial==true){
             two=0
         }
         evaluation()
@@ -98,32 +97,40 @@ class ViewController: UIViewController {
         else{
             result=one
         }
-        b_fuzhi=false
-        b_state=false
+        fuzhi=false
+        initial=false
         x.text="\(result)"
     }
     func click (number:String){
-        Display += number
-        self.x.text = Display
+        //Display += number
+        //x.text = Display
+        if(initial==false){
+            x.text=number
+            initial=true
+        }
+        else{
+            x.text=x.text!+number
+        }
     }
     
     
     func evaluation/*qiuzhi*/(){
-        if(b_fuzhi==false){
+        if(fuzhi==false){
             one=(x.text! as NSString).doubleValue
-            b_fuzhi=true
+            fuzhi=true
         }
         else{
             two=(x.text! as NSString).doubleValue
-            b_fuzhi=true
+            fuzhi=true
         }
+        
         
     }
     var fuhao:String=""
     func ys(fu:String){
         evaluation()
         fuhao=fu
-        b_state=false
+        initial=false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
