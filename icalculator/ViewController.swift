@@ -34,6 +34,15 @@ class ViewController: UIViewController {
     @IBAction func except(sender: AnyObject) {
         ys("except")
     }
+    @IBAction func baifen(sender: AnyObject) {
+        ys("baifen")
+    }
+    @IBAction func pinfang(sender: AnyObject) {
+        ys("pinfang")
+    }
+    @IBAction func Positiveandnegative(sender: AnyObject) {
+        
+    }
     @IBAction func clear(sender: AnyObject) {
         result=0.0
         one=0.0
@@ -76,23 +85,41 @@ class ViewController: UIViewController {
         click("0")
     }
     @IBAction func dit(sender: AnyObject) {
-            click(".")
+        if(initial==false){
+            x.text="0."
+            initial=true
+            dian=true
+        }
+        else if(dian==false) {
+            x.text=x.text!+"."
+            dian=true
+        }
     }
 
     @IBAction func equal(sender: AnyObject) {
+        
         if(initial==true){
             two=0
         }
         evaluation()
         if(fuhao=="add"){
-            result=one+two        }
+            result=one+two
+        }
         else if(fuhao=="reduce"){
             result=one-two
         }
         else if(fuhao=="ride"){
-            result=one*two        }
+            result=one*two
+        }
         else if(fuhao=="except"){
             result=one/two
+        }
+        else if(fuhao=="baifen"){
+            result=result/100
+        }
+        else if(fuhao=="pinfang"){
+            result=result*result
+            
         }
         else{
             result=one
